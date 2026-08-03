@@ -2402,9 +2402,7 @@
         });
       });
 
-      const API_BASE = window.location.origin.includes(":3001")
-        ? ""
-        : "http://localhost:3001";
+      const API_BASE = "https://acp-aspire-backend.vercel.app"
 
       function downloadBrochure() {
         const a = document.createElement("a");
