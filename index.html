@@ -1309,6 +1309,24 @@
 
       gtag("config", "AW-17755398760");
     </script>
+
+    <!-- Conversion tracking function -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-17755398760/jw4dCKyvnNscEOjEt5JC",
+          value: 1.0,
+          currency: "INR",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
   </head>
   <body>
     <!-- TOP BAR -->
@@ -2438,6 +2456,7 @@
           if (!res.ok) throw new Error("Server error");
           document.getElementById("leadForm").classList.add("hide");
           document.getElementById("leadThanks").classList.add("show");
+          gtag_report_conversion();
           downloadBrochure();
         } catch (err) {
           console.error("Form submission error:", err);
@@ -2484,6 +2503,7 @@
           document.body.classList.add("unlocked");
           document.getElementById("gateFormWrap").style.display = "none";
           document.getElementById("gateThanks").classList.add("show");
+          gtag_report_conversion();
           downloadBrochure();
         } catch (err) {
           console.error("Gate form error:", err);
