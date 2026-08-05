@@ -158,13 +158,14 @@
         gap: 12px;
         color: var(--cream);
       }
-      .brandmark svg {
-        height: 30px;
+      .brandmark img {
+        height: 46px;
         width: auto;
+        display: block;
       }
       .brandmark .name {
         font-family: "Cinzel", serif;
-        font-size: 16px;
+        font-size: 18px;
         letter-spacing: 0.14em;
         color: var(--gold-bright);
       }
@@ -1333,19 +1334,7 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="brandmark">
-          <svg
-            viewBox="0 0 60 70"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M30 4 L34 40 L26 40 Z" fill="#c9a24a" />
-            <path d="M18 8 L24 42 L14 40 Z" fill="#c9a24a" opacity="0.85" />
-            <path d="M42 8 L36 42 L46 40 Z" fill="#c9a24a" opacity="0.85" />
-            <path d="M8 14 L18 44 L4 40 Z" fill="#c9a24a" opacity="0.6" />
-            <path d="M52 14 L42 44 L56 40 Z" fill="#c9a24a" opacity="0.6" />
-            <path d="M22 44 Q30 60 38 44 Q30 50 22 44Z" fill="#c9a24a" />
-          </svg>
-          <span class="name">Aspire Centurian Park<small>by Gaurs</small></span>
+          <img src="assets/logo.png" alt="Aspire Centurian Park" />
         </div>
         <div class="topnav">
           <a href="#location">Location</a>
@@ -1495,6 +1484,16 @@
                   id="femail"
                   name="femail"
                   placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="fcity">City</label>
+                <input
+                  type="text"
+                  id="fcity"
+                  name="fcity"
+                  placeholder="Your city"
                   required
                 />
               </div>
@@ -2370,6 +2369,15 @@
                 required
               />
             </div>
+            <div class="field">
+              <label for="gcity">City</label>
+              <input
+                type="text"
+                id="gcity"
+                placeholder="Your city"
+                required
+              />
+            </div>
             <button type="submit" class="btn btn-solid" style="width: 100%">
               Unlock Pricing &amp; Sizing
             </button>
@@ -2442,6 +2450,7 @@
           name: document.getElementById("fname").value,
           phone: document.getElementById("fphone").value,
           email: document.getElementById("femail").value,
+          city: document.getElementById("fcity").value,
           details: document.getElementById("fconfig").value,
           formType: "enquiry",
           timestamp: new Date().toISOString(),
@@ -2489,6 +2498,7 @@
           name: document.getElementById("gname").value,
           phone: document.getElementById("gphone").value,
           email: document.getElementById("gemail").value,
+          city: document.getElementById("gcity").value,
           formType: "pricing-gate",
           timestamp: new Date().toISOString(),
           source: "Aspire Centurian Park — Pricing Unlock Gate",
